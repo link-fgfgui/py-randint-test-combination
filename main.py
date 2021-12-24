@@ -20,11 +20,11 @@ print('随机过程:')
 for i in range(in2):
     print('----------第{}次重复试验----------'.format(i+1))
     for i in range(in1):
-        rand_int = random.randint(1, 2)
-        if rand_int == 1:
+        rand_int = random.randint(1,10000)
+        if rand_int <= 5000:
             A = A+1
             print('<{}>'.format(A1), end='')
-        elif rand_int == 2:
+        elif rand_int > 5000:
             B = B+1
             print('<{}>'.format(B1), end='')
     print()
@@ -33,13 +33,15 @@ for i in range(in2):
     l1.append([A,B])
     A=0
     B=0
-print(l1)
 A=0
 B=0
 print('处理数据中，请稍后......')
+start=time.perf_counter()
 for i in range(len(l1)):
     A=A+l1[i][0]
     B=B+l1[i][1]
-time.sleep(2.4)
-print('最终结果：\nA共{}次，B共{}次\n由数据可知，A:B基本为1:1，故生男生女概率相同'.format(A,B))
+dur=time.perf_counter()-start
+time.sleep(1.8)
+print('\n计算完毕，耗时{:.5f}s'.format(dur))
+print('最终结果：\nA共{}次，B共{}次\n由数据可知，A:B基本为1:1，故生男生女概率相同。\n'.format(A,B))
 input('按Enter键关闭')
