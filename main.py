@@ -20,11 +20,11 @@ print('随机过程:')
 for i in range(in2):
     print('----------第{}次重复试验----------'.format(i+1))
     for i in range(in1):
-        rand_int = random.randint(1, 2)
-        if rand_int == 1:
+        rand_int = random.randint(1，100)
+        if rand_int <= 50:
             A = A+1
             print('<{}>'.format(A1), end='')
-        elif rand_int == 2:
+        elif rand_int >50:
             B = B+1
             print('<{}>'.format(B1), end='')
     print()
