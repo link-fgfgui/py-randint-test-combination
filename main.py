@@ -17,6 +17,7 @@ A1 = 'A'
 B1 = 'B'
 l1=[]
 print('随机过程:')
+start=time.perf_counter()
 for i in range(in2):
     print('----------第{}次重复试验----------'.format(i+1))
     for i in range(in1):
@@ -33,6 +34,7 @@ for i in range(in2):
     l1.append([A,B])
     A=0
     B=0
+dur=time.perf_counter()-start
 A=0
 B=0
 print('处理数据中，请稍后......')
@@ -40,8 +42,8 @@ start=time.perf_counter()
 for i in range(len(l1)):
     A=A+l1[i][0]
     B=B+l1[i][1]
-dur=time.perf_counter()-start
+dur1=time.perf_counter()-start
 time.sleep(1.8)
-print('\n计算完毕，耗时{:.5f}s'.format(dur))
+print('\n计算完毕，循环耗时{:.2f}s,计算耗时{:.5f}s'.format(dur,dur1))
 print('最终结果：\nA共{}次，B共{}次\n由数据可知，A:B基本为1:1，故生男生女概率相同。\n'.format(A,B))
 input('按Enter键关闭')
